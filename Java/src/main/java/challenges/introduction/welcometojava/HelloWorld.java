@@ -1,4 +1,4 @@
-package com.marklytonh.welcometojava;
+package challenges.introduction.welcometojava;
 
 /**
  * Created by nino on 3/14/17.

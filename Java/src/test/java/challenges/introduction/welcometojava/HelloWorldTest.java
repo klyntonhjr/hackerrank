@@ -1,4 +1,4 @@
-package com.marklytonh.welcometojava;
+package challenges.introduction.welcometojava;
 
 import org.junit.After;
 import org.junit.Before;
