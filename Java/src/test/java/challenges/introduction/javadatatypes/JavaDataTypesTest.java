@@ -146,8 +146,8 @@ public class JavaDataTypesTest {
 
     @Test
     public void dataTypeCantFitTest(){
-        String value = "9223372036854775808";
-        data += value; // This Long max value + 1
+        String value = "9223372036854775808"; // This Long max value + 1
+        data += value;
         System.setIn(new ByteArrayInputStream(data.getBytes()));
         expectedOut = value + cantFit;
 
