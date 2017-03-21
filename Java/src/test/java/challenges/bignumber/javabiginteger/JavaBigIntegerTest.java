@@ -1,6 +1,5 @@
 package challenges.bignumber.javabiginteger;
 
-import challenges.bignumber.javabiginteger.JavaBigInteger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
