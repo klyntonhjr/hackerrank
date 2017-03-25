@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
  * Created by nino on 3/24/17.
  */
 public class Java1DArrayTest {
-    private final String args = null;
+    private final String[] args = null;
     private ByteArrayOutputStream stdout = new ByteArrayOutputStream();
     private String data, expected;
 

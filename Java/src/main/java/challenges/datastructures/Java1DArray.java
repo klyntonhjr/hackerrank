@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Created by nino on 3/24/17.
  */
 public class Java1DArray {
-    public static void main(String args) {
+    public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
 
