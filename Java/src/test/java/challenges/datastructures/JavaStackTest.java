@@ -57,7 +57,7 @@ public class JavaStackTest {
 
     @Test
     public void unbalancedStackTest() {
-        data = "{}(";
+        data = "}";
         expected = "false\n";
 
         System.setIn(new ByteArrayInputStream(data.getBytes()));
@@ -78,6 +78,35 @@ public class JavaStackTest {
                 "false\n" +
                 "true\n";
 
+        System.setIn(new ByteArrayInputStream(data.getBytes()));
+
+        JavaStack.main(args);
+
+        assertEquals(expected, stdout.toString());
+    }
+
+    @Test
+    public void longInputStackTest() {
+        data = "({}[])\n" +
+                "(({()})))\n" +
+                "({(){}()})()({(){}()})(){()}\n" +
+                "{}()))(()()({}}{}\n" +
+                "}}}}\n" +
+                "))))\n" +
+                "{{{\n" +
+                "(((\n" +
+                "[]{}(){()}((())){{{}}}{()()}{{}{}}\n" +
+                "[[]][][]";
+        expected = "true\n" +
+                "false\n" +
+                "true\n" +
+                "false\n" +
+                "false\n" +
+                "false\n" +
+                "false\n" +
+                "false\n" +
+                "true\n" +
+                "true\n";
         System.setIn(new ByteArrayInputStream(data.getBytes()));
 
         JavaStack.main(args);

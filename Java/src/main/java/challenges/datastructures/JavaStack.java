@@ -10,44 +10,29 @@ public class JavaStack {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Stack openBraces = new Stack();
+        Stack openBraces;
         while (sc.hasNext()) {
-            String input=sc.next().trim();
-            boolean stackIsBalanced = true;
+            String input=sc.next();
             //Complete the code
-            char c;
-            for (int i = 0; i < input.length(); i++) {
-                c = input.charAt(i);
-                if(c == '(' || c == '{' || c == '['){
+            openBraces = new Stack();
+            for(char c : input.toCharArray()){
+                if(c=='(' || c=='{' || c=='[') {
                     openBraces.push(c);
-                    continue;
-                }
-
-                switch (c){
-                    case ')':
-                        if((char) openBraces.pop() == '(')
-                            continue;
-                        stackIsBalanced = false;
-                        break;
-                    case '}':
-                        if((char) openBraces.pop() == '{')
-                            continue;
-                        stackIsBalanced = false;
-                        break;
-                    case ']':
-                        if((char) openBraces.pop() == '[')
-                            continue;
-                        stackIsBalanced = false;
-                        break;
-                }
+                } else if (openBraces.isEmpty()) {
+                    openBraces.push("not empty");
+                    break;
+                } else if( c==')' && (char) openBraces.peek() == '(' ||
+                    c=='}' && (char) openBraces.peek() == '{' ||
+                    c==']' && (char) openBraces.peek() == '[')
+                    openBraces.pop();
+                else
+                    break;
             }
 
-            if(stackIsBalanced && openBraces.isEmpty())
+            if(openBraces.isEmpty())
                 System.out.println("true");
             else
                 System.out.println("false");
-
-            openBraces = new Stack();
         }
     }
 }
