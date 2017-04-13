@@ -1,4 +1,4 @@
-package weekofcode31.beautifulword;
+package weekofcode31;
 
 import java.util.Scanner;
 

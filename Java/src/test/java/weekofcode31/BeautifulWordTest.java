@@ -1,8 +1,9 @@
-package weekofcode31.beautifulword;
+package weekofcode31;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import weekofcode31.BeautifulWord;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
